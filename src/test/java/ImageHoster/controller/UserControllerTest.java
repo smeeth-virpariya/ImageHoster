@@ -1,4 +1,3 @@
-/*
 package ImageHoster.controller;
 
 import ImageHoster.model.User;
@@ -81,6 +80,7 @@ public class UserControllerTest {
         user.setUsername("Abhi");
         user.setPassword("password1@");
 
+        Mockito.when(userService.isPasswordStrengthValid(Mockito.anyString())).thenReturn(true);
 
         this.mockMvc.perform(post("/users/registration")
                 .flashAttr("user", user)
@@ -167,4 +167,3 @@ public class UserControllerTest {
                 .andExpect(content().string(containsString("Image Hoster")));
     }
 }
-*/
